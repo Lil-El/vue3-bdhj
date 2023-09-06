@@ -5,7 +5,7 @@ import {
 } from "vue-router";
 import { getStorage } from "./utils/storage";
 
-const routes = [
+export const routes = [
   {
     path: "/",
     redirect: "Home",
@@ -41,6 +41,14 @@ const routes = [
     name: "Program",
     path: "/Program",
     component: () => import("./pages/Program/index.vue"),
+    meta: {
+      transition: "router_slide",
+    }
+  },
+  {
+    name: "DataLoading",
+    path: "/DataLoading",
+    component: () => import("./pages/DataLoading/index.vue"),
     meta: {
       transition: "router_slide",
     }

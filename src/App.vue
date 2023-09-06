@@ -2,6 +2,7 @@
 import { reactive, watch, ref } from "vue";
 import { useRouter } from "vue-router";
 import { setStorage, getStorage } from "./utils/storage";
+import { routes } from "./router"
 
 const router = useRouter();
 
@@ -10,7 +11,7 @@ const history = ref(getStorage("HISTORY") == "history");
 // 菜单
 const state = reactive({
   defaultName: "",
-  menu: ["Home", "Tabs", "Counter", "Program"],
+  menu: routes.filter(r => r.name).map(i => i.name),
 });
 
 // 监听路由变化，选中对应的Menu
@@ -34,24 +35,16 @@ const onChange = (val) => {
 
 <template>
   <div class="nav-bar flex-x-center">
-    <el-menu
-      class="el-menu-demo"
-      mode="horizontal"
-      :default-active="state.defaultName"
-      router
-    >
-      <el-menu-item v-for="item in state.menu" :key="item" :index="item">{{
+    <el-menu class="el-menu-demo" mode="horizontal" :default-active="state.defaultName" router>
+      <el-menu-item v-for="item in state.menu" :key="item" :index="item">
+        {{
         item
-      }}</el-menu-item>
+        }}
+      </el-menu-item>
     </el-menu>
     <div>
       <!-- <el-color-picker v-model="color" show-alpha /> -->
-      <el-switch
-        v-model="history"
-        active-text="History"
-        inactive-text="Hash"
-        @change="onChange"
-      />
+      <el-switch v-model="history" active-text="History" inactive-text="Hash" @change="onChange" />
     </div>
   </div>
 
@@ -82,8 +75,6 @@ const onChange = (val) => {
 </style>
 
 <style scoped>
-
-
 .nav-bar {
   padding: 0 12px 0 4px;
   background-color: white;
