@@ -10,7 +10,7 @@ const history = ref(getStorage("HISTORY") == "history");
 // 菜单
 const state = reactive({
   defaultName: "",
-  menu: ["Home", "Tabs", "Counter"],
+  menu: ["Home", "Tabs", "Counter", "Program"],
 });
 
 // 监听路由变化，选中对应的Menu

@@ -104,6 +104,9 @@
 - style lang="sass": 没有“{}”，“;”
   style lang="scss"
 - transition其中一个页面的切换效果不生效：该页面设置了animate，导致和transition的animate冲突
+- 异步组件：1. 仅异步的加载组件(.vue)，即懒加载的路由或组件；与组件内部的异步请求逻辑无关
+          2. setup 顶层await
+- Suspense：可以和异步组件搭配使用
 
 ## blog
 

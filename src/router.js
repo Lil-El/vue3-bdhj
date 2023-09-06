@@ -37,6 +37,14 @@ const routes = [
       transition: "router_slide",
     }
   },
+  {
+    name: "Program",
+    path: "/Program",
+    component: () => import("./pages/Program/index.vue"),
+    meta: {
+      transition: "router_slide",
+    }
+  },
 ];
 
 const router = createRouter({
