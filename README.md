@@ -107,7 +107,8 @@
 - 异步组件：1. 仅异步的加载组件(.vue)，即懒加载的路由或组件；与组件内部的异步请求逻辑无关
           2. setup 顶层await
 - Suspense：可以和异步组件搭配使用
-- git cherry-pick
+- git cherry-pick: 在feature上commit提交了修改，切换到master时使用`git cherry-pick [commit-id前5位]`，可以将commit在master上也进行修改
+- git merge: 在feature上commit提交修改，切换到master时使用`git merge feature`，可以将feature合并到master上
 
 ## blog
 
