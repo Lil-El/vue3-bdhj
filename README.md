@@ -107,6 +107,7 @@
 - 异步组件：1. 仅异步的加载组件(.vue)，即懒加载的路由或组件；与组件内部的异步请求逻辑无关
           2. setup 顶层await
 - Suspense：可以和异步组件搭配使用
+- git cherry-pick
 
 ## blog
 
