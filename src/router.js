@@ -53,6 +53,14 @@ export const routes = [
       transition: "router_slide",
     }
   },
+  {
+    name: "Radius",
+    path: "/Radius",
+    component: () => import("./pages/Radius/index.vue"),
+    meta: {
+      transition: "router_slide",
+    }
+  },
 ];
 
 const router = createRouter({
