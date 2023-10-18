@@ -19,7 +19,7 @@
 nav {
   display: flex;
   background: linear-gradient(145deg, #eee 50%, white 50%);
-  height:  36px;
+  height: 36px;
   div {
     width: 50%;
     height: 100%;

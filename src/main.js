@@ -11,6 +11,11 @@ import router from "./router";
 import "./assets/style.css";
 import "./assets/index.scss";
 
+import mixin from "./mixin";
+
 const app = createApp(App);
+
+app.mixin(mixin);
+
 app.use(createPinia()).use(router).use(ElementPlus);
 app.mount("#app");

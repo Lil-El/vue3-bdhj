@@ -61,6 +61,14 @@ export const routes = [
       transition: "router_slide",
     }
   },
+  {
+    name: "Mixin",
+    path: "/Mixin",
+    component: () => import("./pages/Mixin/index.vue"),
+    meta: {
+      transition: "router_slide",
+    }
+  },
 ];
 
 const router = createRouter({
