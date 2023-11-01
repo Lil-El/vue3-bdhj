@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "decimal.js": "^10.4.3",
     "element-plus": "^2.3.9",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",

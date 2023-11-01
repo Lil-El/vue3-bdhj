@@ -69,6 +69,14 @@ export const routes = [
       transition: "router_slide",
     }
   },
+  {
+    name: "Number",
+    path: "/Number",
+    component: () => import("./pages/Number/index.vue"),
+    meta: {
+      transition: "router_slide",
+    }
+  },
 ];
 
 const router = createRouter({

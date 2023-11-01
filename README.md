@@ -65,51 +65,53 @@
       ```
       `Main.vue`删除
 - transition:
-    使用1.则在Main.vue中修改，使用2，在App.vue修改
-    ```html
-        <router-view v-slot="{ Component }">
-            <transition name="fade-right" mode="out-in">
-                <component :is="Component" />
-            </transition>
-        </router-view>
-        <style scoped>
-            .fade-right-enter-to,
-            .fade-right-leave-from {
-                opacity: 1;
-                transform: none;
-            }
+  使用 1.则在 Main.vue 中修改，使用 2，在 App.vue 修改
 
-            .fade-right-enter-active,
-            .fade-right-leave-active {
-                transition: all 0.5s;
-            }
+  ```html
+  <router-view v-slot="{ Component }">
+    <transition name="fade-right" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
+  <style scoped>
+    .fade-right-enter-to,
+    .fade-right-leave-from {
+      opacity: 1;
+      transform: none;
+    }
 
-            .fade-right-enter-from,
-            .fade-right-leave-to {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-        </style>
-    ```
-    > 对应的Home.vue, Counter.vue的template需要一个root节点
-    > ```html
-    > <template>
-    >    <div>
-    >        h1
-    >        span
-    >        ...
-    >    </div>
-    > </template>
-    > ```
+    .fade-right-enter-active,
+    .fade-right-leave-active {
+      transition: all 0.5s;
+    }
+
+    .fade-right-enter-from,
+    .fade-right-leave-to {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  </style>
+  ```
+
+  > 对应的 Home.vue, Counter.vue 的 template 需要一个 root 节点
+  >
+  > ```html
+  > <template>
+  >   <div>h1 span ...</div>
+  > </template>
+  > ```
+  >
+  > transition 内的顶层需要一个节点，如果是多个会产生问题。
+  > 所以 component（即其他的 vue 文件）需要有一个 div 包裹
+
 - style lang="sass": 没有“{}”，“;”
   style lang="scss"
-- transition其中一个页面的切换效果不生效：该页面设置了animate，导致和transition的animate冲突
-- 异步组件：1. 仅异步的加载组件(.vue)，即懒加载的路由或组件；与组件内部的异步请求逻辑无关
-          2. setup 顶层await
+- transition 其中一个页面的切换效果不生效：该页面设置了 animate，导致和 transition 的 animate 冲突
+- 异步组件：1. 仅异步的加载组件(.vue)，即懒加载的路由或组件；与组件内部的异步请求逻辑无关 2. setup 顶层 await
 - Suspense：可以和异步组件搭配使用
-- git cherry-pick: 在feature上commit提交了修改，切换到master时使用`git cherry-pick [commit-id前5位]`，可以将commit在master上也进行修改
-- git merge: 在feature上commit提交修改，切换到master时使用`git merge feature`，可以将feature合并到master上
+- git cherry-pick: 在 feature 上 commit 提交了修改，切换到 master 时使用`git cherry-pick [commit-id前5位]`，可以将 commit 在 master 上也进行修改
+- git merge: 在 feature 上 commit 提交修改，切换到 master 时使用`git merge feature`，可以将 feature 合并到 master 上
 
 ## blog
 
-- [rules自动校验](https://blog.csdn.net/qq_38425020/article/details/128779662)
+- [rules 自动校验](https://blog.csdn.net/qq_38425020/article/details/128779662)
